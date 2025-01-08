@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #This script displays all active IPv4 IPs on the machine its executed on
 
-hostname -I | tr ' ' '\n' | head -2
+ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
