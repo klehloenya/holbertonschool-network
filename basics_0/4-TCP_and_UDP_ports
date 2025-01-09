@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# The scrip that displays listening ports
-netstat -1p
+# This script displays Active Internet connections
+netstat -lp
