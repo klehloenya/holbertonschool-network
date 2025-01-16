@@ -1,0 +1,120 @@
+This process of pressing https://www.google.com happens in a milliseconds.
+
+DNS Request (Domain Name System):
+
+
+Browser checks its local DNS cache first
+If not found, sends request to DNS resolver (usually your ISP)
+DNS resolver follows chain:
+
+Root nameservers (.)
+TLD nameservers (.com)
+Authoritative nameservers (google.com)
+
+
+Returns IP address for www.google.com
+
+
+TCP/IP:
+
+
+Browser initiates TCP connection using three-way handshake:
+
+SYN (Client → Server)
+SYN-ACK (Server → Client)
+ACK (Client → Server)
+
+
+IP handles routing of packets between client and server
+Establishes reliable connection for data transfer
+
+
+Firewall:
+
+
+Checks incoming/outgoing traffic against security rules
+May examine:
+
+Source/destination IP addresses
+Port numbers
+Protocol types
+
+
+Allows/blocks traffic based on configured rules
+
+
+HTTPS/SSL:
+
+
+SSL/TLS handshake begins:
+
+Client sends "hello" with supported cipher suites
+Server responds with certificate
+Key exchange occurs
+Symmetric encryption established
+
+
+All subsequent communication is encrypted
+Browser verifies Google's SSL certificate
+
+
+Load-balancer:
+
+
+Receives incoming request
+Distributes traffic across multiple servers based on:
+
+Server health
+Current load
+Geographic location
+Request type
+
+
+Ensures optimal resource utilization
+
+
+Web Server (e.g., Nginx/Apache):
+
+
+Receives the HTTP request
+Handles static content delivery
+Routes dynamic requests to application server
+Manages connections and basic security
+Serves static files (HTML, CSS, images)
+
+
+Application Server:
+
+
+Processes dynamic content requests
+Runs the application logic
+Handles user authentication
+Processes form submissions
+Makes API calls if needed
+Generates dynamic HTML
+
+
+Database:
+
+
+Stores persistent data
+Handles queries from application server
+Returns requested data
+Manages data integrity
+Handles concurrent access
+Performs CRUD operations
+
+Full Process Flow:
+
+User types URL and presses Enter
+Browser checks local DNS cache
+DNS resolution occurs
+TCP connection established
+Firewall checks traffic
+SSL/TLS handshake completed
+Load balancer distributes request
+Web server receives request
+Application server processes request
+Database provides necessary data
+Response travels back through the stack
+Browser renders the page
